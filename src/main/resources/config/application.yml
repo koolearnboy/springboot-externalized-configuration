@@ -1,0 +1,47 @@
+#可以使用yml替换properties文件使用,yml的优先级低于properties,当有properties就不会再读取有yml
+username: yml-wongmeichiu3
+
+my:
+  uuid: yml-${random.uuid}
+  servers:
+    - dev.example.com
+    - another.example.com
+
+her:
+  uuid: yml-${random.uuid}-her
+  servers:
+    - dev.example.com-her
+    - another.example.com-her
+
+name: yml-${username}(no-profile)
+
+other:
+  student:
+    age: 10
+    sex: female
+    score: 100 #score定义了 但是在YAMLBean4.Student中没有定义该属性是不影响值的绑定的
+
+server: localhost
+
+#以上是默认属性
+#通过---进行分割,否则spring: 会提示重复定义
+#通过  --spring.profiles.active=prod 激活
+---
+#dev模式属性
+spring:
+  profiles: dev
+server: 127.0.0.1
+her:
+  uuid: yml-${random.uuid}-her-dev
+---
+#prod模式属性
+spring:
+  profiles: prod
+server: 192.168.1.100
+her:
+  uuid: yml-${random.uuid}-her-prod
+
+
+
+
+

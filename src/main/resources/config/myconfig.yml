@@ -1,0 +1,7 @@
+#自定义名称的属性文件可以通过
+#  java -jar target/springboot-externalized-configuration-1.0-SNAPSHOT.jar --spring.config.location=classpath:/config/myconfig.yml
+#进行指定位置,此时就不会再去加载 application.properties文件
+username: tina
+
+my:
+  uuid: 1233213213213
