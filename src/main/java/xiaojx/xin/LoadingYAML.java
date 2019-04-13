@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 通过YAML2Bean加载application.yml的值到YAML2Bean对象中,并放到spring容器
@@ -14,13 +16,21 @@ import org.springframework.core.env.Environment;
  * 官方文档有这一句:you either need to provide a setter or initialize it with a mutable value
  */
 @SpringBootApplication
+@RestController
 public class LoadingYAML implements ApplicationContextAware {
 
     @Autowired
     private YAML2Bean4 yaml2Bean4;
+    @Autowired
+    private Teacher teacher;
 
     public static void main(String[] args) {
         SpringApplication.run(LoadingYAML.class,args);
+    }
+
+    @RequestMapping("/teacher")
+    public String getTeacher(){
+        return teacher.toString();
     }
 
     @Override
@@ -41,5 +51,6 @@ public class LoadingYAML implements ApplicationContextAware {
         System.out.println("bean4---"+bean4.getStudent());
         // or 通过自动注入
         System.out.println("yaml2Bean4自动注入的方式:"+yaml2Bean4.getStudent());
+        System.out.println("yaml2Bean5-teacher自动注入的方式:"+teacher);
     }
 }

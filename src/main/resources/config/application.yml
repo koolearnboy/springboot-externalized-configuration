@@ -21,6 +21,11 @@ other:
     sex: female
     score: 100 #score定义了 但是在YAMLBean4.Student中没有定义该属性是不影响值的绑定的
 
+another:
+  teacher:
+    age: 18
+    sex: male
+
 server: localhost
 
 #以上是默认属性

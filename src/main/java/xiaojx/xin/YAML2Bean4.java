@@ -6,6 +6,8 @@ import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -24,5 +26,6 @@ public class YAML2Bean4 {
     public static class Student{
         private Integer age;
         private String sex;
+        private List<String> roles = new ArrayList<>(Collections.singleton("USER"));
     }
 }

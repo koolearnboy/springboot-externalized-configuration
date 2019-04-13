@@ -13,6 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @Component
+//默认加载application.properties再进行值的绑定注入
 public class YAML2Bean2 {
     @Value("${her.uuid}")
     String uuid;
