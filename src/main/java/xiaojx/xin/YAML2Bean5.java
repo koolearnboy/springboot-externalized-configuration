@@ -21,9 +21,10 @@ import java.util.List;
 @Configuration
 public class YAML2Bean5 {
 
-    @ConfigurationProperties(prefix = "another")
+    @ConfigurationProperties(prefix = "another.teacher")
     @Bean
     public Teacher teacher(){
+        //先构找出对象，然后通过@ConfigurationProperties注解绑定值再放入容器中
         Teacher t = new Teacher();
         System.out.println("teacher before: === "+t);
         return t;
