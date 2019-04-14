@@ -37,4 +37,6 @@ public class YAML2Bean5 {
 class Teacher{
     private Integer age;
     private String sex;
+    private String firstName;
+    private String lastName;
 }

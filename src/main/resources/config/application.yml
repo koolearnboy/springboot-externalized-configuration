@@ -25,8 +25,22 @@ another:
   teacher:
     age: 18
     sex: male
+    first-name: Michael #relexed binding 对应bean的属性名为firstName
+    last_name: jx #relexed binding ==》 lastName
+
 
 server: localhost
+
+acme:
+  list:
+    - name: my list name
+      desc: list desc
+  map:
+    key1:
+      - name: my map name
+        desc: map desc
+
+
 
 #以上是默认属性
 #通过---进行分割,否则spring: 会提示重复定义
@@ -38,6 +52,15 @@ spring:
 server: 127.0.0.1
 her:
   uuid: yml-${random.uuid}-her-dev
+
+acme:
+  list:
+    - name: my list name
+      desc: list desc
+  map:
+    key1:
+      - name: my map name
+        desc: map desc
 ---
 #prod模式属性
 spring:
