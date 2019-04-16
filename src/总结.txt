@@ -1,0 +1,4 @@
+1、配置文件可以放在4个地方，他们优先级分别不同
+2、可以通过@Value将配置文件的值直接绑定到字段上，也可以在class上使用@ConfigurationProperties注解，直接将配置文件的值
+    绑定到该class的Bean中，并放入到容器中
+3、配置文件可以通过使用 "---" 进行分割不同的profile，在不同的profile下可以配置不同的属性，默认激活的诗default

@@ -33,11 +33,11 @@ server: localhost
 
 acme:
   list:
-    - name: my list name
-      desc: list desc
+    - name: default-list-name
+      desc: default-list-desc
   map:
     key1:
-      - name: my map name
+        name: my map name
         desc: map desc
 
 
